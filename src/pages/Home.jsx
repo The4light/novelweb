@@ -231,7 +231,7 @@ const NovelCard = ({ novel }) => {
       <p className="text-sm text-gray-500 line-clamp-2">{novel.description}</p>
     </div>
   );
-};
+};  
 
 // ========== FEATURED SECTION ==========
 const FeaturedSection = () => {
