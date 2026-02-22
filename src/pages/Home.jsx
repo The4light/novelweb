@@ -1,6 +1,7 @@
 import React from 'react';
 import { novelsData, genreColors } from '../data/novel';
 import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 
 // Reusable Local Icons for UI elements specific to Home
 const HomeIcons = {
@@ -144,9 +145,14 @@ const HomePage = () => {
             <p className="text-gray-400 mb-10 text-lg max-w-2xl mx-auto">
               Join a global community of writers and readers. Turn your imagination into a masterpiece.
             </p>
-            <button className="bg-white text-black px-10 py-4 rounded-xl font-black text-lg hover:bg-gray-100 transition-all active:scale-95 shadow-xl">
+            <Link            
+            to="/write"
+            >
+              <button className="bg-white text-black px-10 py-4 rounded-xl font-black text-lg hover:bg-gray-100 transition-all active:scale-95 shadow-xl">
               Start Writing Now
             </button>
+            </Link>
+            
           </div>
         </div>
       </div>
