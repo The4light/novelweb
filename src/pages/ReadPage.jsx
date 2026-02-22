@@ -157,6 +157,60 @@ const ReadPage = () => {
                 NEXT CHAPTER <Icons.TrendingUp className="w-4 h-4 rotate-90"/>
               </button>
             </div>
+            {/* --- NEW COMMENT SECTION --- */}
+        <section className="mt-32 bg-gray-50 rounded-[2rem] p-8 md:p-12">
+          <div className="flex items-center justify-between mb-10">
+            <h3 className="text-2xl font-black text-gray-900 tracking-tight">Discussion</h3>
+            <span className="px-3 py-1 bg-white rounded-full text-[10px] font-black text-gray-400 border border-gray-100 uppercase tracking-widest">
+              2 Comments
+            </span>
+          </div>
+
+          {/* Comment Input */}
+          <div className="flex gap-4 mb-12">
+            <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
+              <Icons.User className="w-5 h-5 text-purple-600" />
+            </div>
+            <div className="flex-1">
+              <textarea 
+                placeholder="What are your thoughts on this chapter?"
+                className="w-full bg-white border border-gray-100 rounded-2xl p-4 text-sm font-medium focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none transition-all resize-none min-h-[100px]"
+              ></textarea>
+              <div className="mt-3 flex justify-end">
+                <button className="bg-black text-white px-6 py-2 rounded-xl text-xs font-black tracking-widest hover:bg-purple-600 transition-colors">
+                  POST COMMENT
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Comment List */}
+          <div className="space-y-8">
+            {[
+              { user: "Alex Rivers", date: "2 hours ago", text: "The way the magic system is described here is so unique. I didn't expect Elias to have that reaction to the book!" },
+              { user: "Luna_Reads", date: "5 hours ago", text: "This cliffhanger is killing me! Can't wait for Chapter 2." }
+            ].map((comment, i) => (
+              <div key={i} className="flex gap-4 group">
+                <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 border-2 border-white shadow-sm">
+                  <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="" />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-sm font-black text-gray-900">{comment.user}</span>
+                    <span className="text-[10px] font-bold text-gray-300 uppercase">{comment.date}</span>
+                  </div>
+                  <p className="text-sm text-gray-600 leading-relaxed font-medium">
+                    {comment.text}
+                  </p>
+                  <div className="mt-3 flex gap-4">
+                    <button className="text-[10px] font-black text-gray-400 hover:text-purple-600 uppercase tracking-widest transition-colors">Like</button>
+                    <button className="text-[10px] font-black text-gray-400 hover:text-purple-600 uppercase tracking-widest transition-colors">Reply</button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
           </main>
         </div>
       )}
