@@ -75,15 +75,17 @@ const Navbar = () => {
               <Icons.Tag />
             </button>
             <Link
-            to="profile" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            to="/profile" className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
                 <button className="p-2 hover:bg-gray-50 rounded-lg text-gray-500 transition-colors">
                   <Icons.User />
                 </button>
             </Link>
            
-            <button className="ml-2 bg-black text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-gray-800 transition-all active:scale-95">
-              Share
-            </button>
+            <Link 
+            to = "/auth"
+             className="ml-2 bg-black text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-gray-800 transition-all active:scale-95">
+              Login/Signup
+            </Link>
           </div>
 
           {/* Mobile menu button */}
